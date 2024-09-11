@@ -1,5 +1,6 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
+PYTHON_BASEVERSION = "3.12"
 
 SRC_URI += " \
 	file://0001-add-xfce-to-autostart-onlyshowin.patch \
@@ -9,6 +10,7 @@ SRC_URI += " \
 	file://onboard-defaults.conf \
 "
 
+CFLAGS += "-Werror=declaration-after-statement"
 
 do_install:append () {
 	install -d ${D}${sysconfdir}/dconf/db/local.d
