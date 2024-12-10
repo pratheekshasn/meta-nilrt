@@ -110,3 +110,6 @@ for pid in $(pidof gpg-agent); do
 		break
 	fi
 done
+
+# Upgrade opkg-keyrings to the latest version to get the latest signing keys
+/usr/sbin/chroot /mnt/userfs/ opkg -o /mnt/userfs/ upgrade opkg-keyrings
